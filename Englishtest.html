@@ -3,35 +3,6 @@
 <head>
   <title>Exam</title>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#showFormButton").click(function() {
-        $("#questionForm").show();
-      });
-      
-      $("#questionForm").submit(function(e) {
-        e.preventDefault(); 
-        var question = $("#questionInput").val();
-        
-        
-        $.ajax({
-          type: "POST",
-          url: "insert_question.php", 
-          data: { question: question },
-          success: function(response) {
-            
-            alert("Question submitted successfully!");
-          },
-          error: function(xhr, status, error) {
-           
-            alert("Error submitting question: " + error);
-          }
-        });
-      });
-    });
-  </script>
-  
   
   <style>
     body {
@@ -99,15 +70,7 @@
 
 </head>
 <body>
-  
-  <button id="showFormButton">Show Form</button>
-  <form id="questionForm" style="display: none;">
-    <label for="questionInput">Question:</label>
-    <input type="text" id="questionInput" name="questionInput">
-    <button type="submit">Submit</button>
-  </form>
-  
-  
+   
   <h1>Exam</h1>
   <label for="nameInput">Name:</label>
   <input type="text" id="nameInput">
